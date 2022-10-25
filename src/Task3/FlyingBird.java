@@ -2,10 +2,10 @@ package Task3;
 
 import java.util.Objects;
 
-public class FlyingBirds extends Birds {
+public class FlyingBird extends Bird {
     private String movementType;
 
-    public FlyingBirds(String name, int age, String habitat, String movementType) {
+    public FlyingBird(String name, int age, String habitat, String movementType) {
         super(name, age, habitat);
 
         setMovementType(movementType);
@@ -23,22 +23,22 @@ public class FlyingBirds extends Birds {
 
     @Override
     public void eat() {
-
+        System.out.println("Летающая птица " + getName() + " ест");
     }
 
     @Override
     public void sleep() {
-
+        System.out.println("Летающая птица " + getName() + " спит");
     }
 
     @Override
     public void go() {
-
+        System.out.println("Летающая птица " + getName() + " летит");
     }
 
     @Override
     public void hunting() {
-
+        System.out.println("Летающая птица " + getName() + " охотится");
     }
 
     public void flying() {
@@ -49,7 +49,7 @@ public class FlyingBirds extends Birds {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        FlyingBirds that = (FlyingBirds) o;
+        FlyingBird that = (FlyingBird) o;
         return Objects.equals(movementType, that.movementType) && Objects.equals(getName(), that.getName()) && Objects.equals(getAge(), that.getAge()) && Objects.equals(getHabitat(), that.getHabitat());
     }
 

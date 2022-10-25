@@ -2,20 +2,20 @@ package Task3;
 
 import java.util.Arrays;
 
-public abstract class Animals {
+public abstract class Animal {
     private String name;
     private int age;
 
-    private Animals[] animals;
+    private Animal[] animals;
 
-    public Animals(String name, int age) {
+    public Animal(String name, int age) {
         setName(name);
 
         if (age > 0 && age < 50) {
             this.age = age;
         }
 
-        animals = new Animals[0];
+        animals = new Animal[0];
     }
 
     public final String getName() {
@@ -38,15 +38,15 @@ public abstract class Animals {
 
     public abstract void go();
 
-    Animals[] getAnimals() {
+    Animal[] getAnimals() {
         if (animals == null) {
-            animals = new Animals[0];
+            animals = new Animal[0];
         }
         return animals;
     }
 
-    void addAnimal(Animals animal) {
-        Animals[] animals = new Animals[getAnimals().length + 1];
+    void addAnimal(Animal animal) {
+        Animal[] animals = new Animal[getAnimals().length + 1];
         this.animals = Arrays.copyOf(this.animals, getAnimals().length + 1);
         this.animals[this.animals.length - 1] = animal;
     }

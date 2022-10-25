@@ -1,10 +1,10 @@
 package Task3;
 
-public abstract class Mammals extends Animals {
+public abstract class Mammal extends Animal {
     private String habitat;
     private int movementSpeed;
 
-    public Mammals(String name, int age, String habitat, int movementSpeed) {
+    public Mammal(String name, int age, String habitat, int movementSpeed) {
         super(name, age);
 
         setHabitat(habitat);

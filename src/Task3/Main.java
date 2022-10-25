@@ -15,14 +15,14 @@ public class Main {
         GrassFeeding horse = new GrassFeeding("лошадь", 4, "лесостепь", 40, "трава");
         System.out.println(horse);
 
-        Predators hyena = new Predators("гиена", 1, "саванна", 60, "мясо или падаль");
+        Predator hyena = new Predator("гиена", 1, "саванна", 60, "мясо или падаль");
         System.out.println(hyena);
         hyena.hunting();
 
-        Predators tiger = new Predators("тигр", 6, "тайга", 60, "мясо");
+        Predator tiger = new Predator("тигр", 6, "тайга", 60, "мясо");
         System.out.println(tiger);
 
-        Predators bear = new Predators("медведь", 3, "лес", 50, "мясо, растительная пища, падаль");
+        Predator bear = new Predator("медведь", 3, "лес", 50, "мясо, растительная пища, падаль");
         System.out.println(bear);
 
         Amphibia frog = new Amphibia("лягушка", 2, "пресноводные водоёмы");
@@ -31,25 +31,26 @@ public class Main {
 
         Amphibia aquaAnguis = new Amphibia("уж пресноводный", 1, "пресноводные водоёмы");
         System.out.println(aquaAnguis);
+        aquaAnguis.eat();
 
-        NotFlyingBirds peafowl = new NotFlyingBirds("павлин", 6, "джунгли", "наземный");
+        NotFlyingBird peafowl = new NotFlyingBird("павлин", 6, "джунгли", "наземный");
         System.out.println(peafowl);
         peafowl.walking();
 
-        NotFlyingBirds penguin = new NotFlyingBirds("пингвин", 3, "Антарктика", "водный и наземный");
+        NotFlyingBird penguin = new NotFlyingBird("пингвин", 3, "Антарктика", "водный и наземный");
         System.out.println(penguin);
 
-        NotFlyingBirds dodo = new NotFlyingBirds("птица додо", 8, "остров Маврикий", "наземный");
+        NotFlyingBird dodo = new NotFlyingBird("птица додо", 8, "остров Маврикий", "наземный");
         System.out.println(dodo);
 
-        FlyingBirds seagull = new FlyingBirds("чайка", 2, "берег и прибрежные морские воды", "летающий");
+        FlyingBird seagull = new FlyingBird("чайка", 2, "берег и прибрежные морские воды", "летающий");
         System.out.println(seagull);
         seagull.flying();
 
-        FlyingBirds albatross = new FlyingBirds("альбатрос", 4, "ледяные воды Антарктиды", "летающий");
+        FlyingBird albatross = new FlyingBird("альбатрос", 4, "ледяные воды Антарктиды", "летающий");
         System.out.println(albatross);
 
-        FlyingBirds falcon = new FlyingBirds("сокол", 5, "пустыня, тунда, тайга", "летающий");
+        FlyingBird falcon = new FlyingBird("сокол", 5, "пустыня, тунда, тайга", "летающий");
         System.out.println(falcon);
 
         gazelle.addAnimal(horse);
@@ -71,22 +72,22 @@ public class Main {
         checkUniquenessOfAnimals(gazelle.getAnimals());
     }
 
-    public static void checkUniquenessOfAnimals (Animals[] animals) {
-        ArrayList<Animals> grassFeeding = new ArrayList<>();
-        ArrayList<Animals> predators = new ArrayList<>();
-        ArrayList<Animals> amphibia = new ArrayList<>();
-        ArrayList<Animals> notFlyingBirds = new ArrayList<>();
-        ArrayList<Animals> flyingBirds = new ArrayList<>();
+    public static void checkUniquenessOfAnimals (Animal[] animals) {
+        ArrayList<Animal> grassFeeding = new ArrayList<>();
+        ArrayList<Animal> predators = new ArrayList<>();
+        ArrayList<Animal> amphibia = new ArrayList<>();
+        ArrayList<Animal> notFlyingBirds = new ArrayList<>();
+        ArrayList<Animal> flyingBirds = new ArrayList<>();
         for (int i = 0; i < animals.length; i++) {
             if (animals[i] instanceof GrassFeeding) {
                 grassFeeding.add(animals[i]);
-            } else if (animals[i] instanceof Predators) {
+            } else if (animals[i] instanceof Predator) {
                 predators.add(animals[i]);
             } else if (animals[i].getClass() == Amphibia.class) {
                 amphibia.add(animals[i]);
-            } else if (animals[i].getClass() == NotFlyingBirds.class) {
+            } else if (animals[i].getClass() == NotFlyingBird.class) {
                 notFlyingBirds.add(animals[i]);
-            } else if (animals[i] instanceof FlyingBirds) {
+            } else if (animals[i] instanceof FlyingBird) {
                 flyingBirds.add(animals[i]);
             }
         }
@@ -97,7 +98,7 @@ public class Main {
         findSameAnimals(flyingBirds);
     }
 
-    public static void findSameAnimals(ArrayList<Animals> animals) {
+    public static void findSameAnimals(ArrayList<Animal> animals) {
         for (int i = 0; i < animals.size(); i++) {
             for (int j = i +1; j < animals.size(); j++) {
                 if (animals.get(i).equals(animals.get(j))) {

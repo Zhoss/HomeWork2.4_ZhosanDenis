@@ -2,10 +2,10 @@ package Task3;
 
 import java.util.Objects;
 
-public class NotFlyingBirds extends Birds {
+public class NotFlyingBird extends Bird {
     private String movementType;
 
-    public NotFlyingBirds(String name, int age, String habitat, String movementType) {
+    public NotFlyingBird(String name, int age, String habitat, String movementType) {
         super(name, age, habitat);
 
         setMovementType(movementType);
@@ -23,22 +23,22 @@ public class NotFlyingBirds extends Birds {
 
     @Override
     public void eat() {
-
+        System.out.println("Нелетающая птица " + getName() + " ест");
     }
 
     @Override
     public void sleep() {
-
+        System.out.println("Нелетающая птица " + getName() + " спит");
     }
 
     @Override
     public void go() {
-
+        System.out.println("Нелетающая птица " + getName() + " идет");
     }
 
     @Override
     public void hunting() {
-
+        System.out.println("Нелетающая птица " + getName() + " охотится");
     }
 
     public void walking() {
@@ -49,7 +49,7 @@ public class NotFlyingBirds extends Birds {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        NotFlyingBirds that = (NotFlyingBirds) o;
+        NotFlyingBird that = (NotFlyingBird) o;
         return Objects.equals(movementType, that.movementType) && Objects.equals(getName(), that.getName()) && Objects.equals(getAge(), that.getAge()) && Objects.equals(getHabitat(), that.getHabitat());
     }
 

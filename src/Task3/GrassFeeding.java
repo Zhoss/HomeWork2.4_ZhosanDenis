@@ -2,7 +2,7 @@ package Task3;
 
 import java.util.Objects;
 
-public class GrassFeeding extends Mammals {
+public class GrassFeeding extends Mammal {
     private String foodType;
 
     public GrassFeeding(String name, int age, String habitat, int movementSpeed, String foodType) {
@@ -23,22 +23,22 @@ public class GrassFeeding extends Mammals {
 
     @Override
     public void eat() {
-
+        System.out.println("Травоядное " + getName() + " ест траву");
     }
 
     @Override
     public void sleep() {
-
+        System.out.println("Травоядное " + getName() + " спит");
     }
 
     @Override
     public void go() {
-
+        System.out.println("Травоядное " + getName() + " идет");
     }
 
     @Override
     public void walking() {
-
+        System.out.println("Травоядное " + getName() + " гуляет");
     }
 
     public void grazing() {

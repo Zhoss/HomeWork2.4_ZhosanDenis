@@ -2,10 +2,10 @@ package Task3;
 
 import java.util.Objects;
 
-public class Predators extends Mammals {
+public class Predator extends Mammal {
     private String foodType;
 
-    public Predators(String name, int age, String habitat, int movementSpeed, String foodType) {
+    public Predator(String name, int age, String habitat, int movementSpeed, String foodType) {
         super(name, age, habitat, movementSpeed);
 
         setFoodType(foodType);
@@ -23,22 +23,22 @@ public class Predators extends Mammals {
 
     @Override
     public void eat() {
-
+        System.out.println("Хищник " + getName() + " ест мясо");
     }
 
     @Override
     public void sleep() {
-
+        System.out.println("Хищник " + getName() + " спит");
     }
 
     @Override
     public void go() {
-
+        System.out.println("Хищник " + getName() + " идет");
     }
 
     @Override
     public void walking() {
-
+        System.out.println("Хищник " + getName() + " гуляет");
     }
 
     public void hunting() {
@@ -49,7 +49,7 @@ public class Predators extends Mammals {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Predators that = (Predators) o;
+        Predator that = (Predator) o;
         return Objects.equals(foodType, that.foodType) && Objects.equals(getName(), that.getName()) && Objects.equals(getAge(), that.getAge()) && Objects.equals(getHabitat(), that.getHabitat()) && Objects.equals(getMovementSpeed(), that.getMovementSpeed());
     }
 

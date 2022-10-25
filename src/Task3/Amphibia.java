@@ -2,7 +2,7 @@ package Task3;
 
 import java.util.Objects;
 
-public class Amphibia extends Animals {
+public class Amphibia extends Animal {
     private String habitat;
 
     public Amphibia(String name, int age, String habitat) {
@@ -23,17 +23,17 @@ public class Amphibia extends Animals {
 
     @Override
     public void eat() {
-
+        System.out.println("Земноводное " + getName() + " ест");
     }
 
     @Override
     public void sleep() {
-
+        System.out.println("Земноводное " + getName() + " спит");
     }
 
     @Override
     public void go() {
-
+        System.out.println("Земноводное " + getName() + " передвигается");
     }
 
     public void hunting() {

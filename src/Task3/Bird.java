@@ -1,9 +1,9 @@
 package Task3;
 
-public abstract class Birds extends Animals {
+public abstract class Bird extends Animal {
     private String habitat;
 
-    public Birds(String name, int age, String habitat) {
+    public Bird(String name, int age, String habitat) {
         super(name, age);
 
         setHabitat(habitat);
