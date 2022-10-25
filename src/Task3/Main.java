@@ -1,7 +1,4 @@
 package Task3;
-
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -53,58 +50,9 @@ public class Main {
         FlyingBird falcon = new FlyingBird("сокол", 5, "пустыня, тунда, тайга", "летающий");
         System.out.println(falcon);
 
-        gazelle.addAnimal(horse);
-        gazelle.addAnimal(gazelle);
-        gazelle.addAnimal(giraffe);
-        gazelle.addAnimal(horse);
-        gazelle.addAnimal(hyena);
-        gazelle.addAnimal(tiger);
-        gazelle.addAnimal(bear);
-        gazelle.addAnimal(frog);
-        gazelle.addAnimal(aquaAnguis);
-        gazelle.addAnimal(peafowl);
-        gazelle.addAnimal(penguin);
-        gazelle.addAnimal(dodo);
-        gazelle.addAnimal(seagull);
-        gazelle.addAnimal(albatross);
-        gazelle.addAnimal(falcon);
+        Zoo zoo = new Zoo(new Animal[]{gazelle, gazelle, giraffe, horse, hyena, tiger, bear, frog, aquaAnguis, peafowl, penguin, dodo, seagull, albatross, falcon});
+        System.out.println(zoo);
 
-        checkUniquenessOfAnimals(gazelle.getAnimals());
-    }
-
-    public static void checkUniquenessOfAnimals (Animal[] animals) {
-        ArrayList<Animal> grassFeeding = new ArrayList<>();
-        ArrayList<Animal> predators = new ArrayList<>();
-        ArrayList<Animal> amphibia = new ArrayList<>();
-        ArrayList<Animal> notFlyingBirds = new ArrayList<>();
-        ArrayList<Animal> flyingBirds = new ArrayList<>();
-        for (int i = 0; i < animals.length; i++) {
-            if (animals[i] instanceof GrassFeeding) {
-                grassFeeding.add(animals[i]);
-            } else if (animals[i] instanceof Predator) {
-                predators.add(animals[i]);
-            } else if (animals[i].getClass() == Amphibia.class) {
-                amphibia.add(animals[i]);
-            } else if (animals[i].getClass() == NotFlyingBird.class) {
-                notFlyingBirds.add(animals[i]);
-            } else if (animals[i] instanceof FlyingBird) {
-                flyingBirds.add(animals[i]);
-            }
-        }
-        findSameAnimals(grassFeeding);
-        findSameAnimals(predators);
-        findSameAnimals(amphibia);
-        findSameAnimals(notFlyingBirds);
-        findSameAnimals(flyingBirds);
-    }
-
-    public static void findSameAnimals(ArrayList<Animal> animals) {
-        for (int i = 0; i < animals.size(); i++) {
-            for (int j = i +1; j < animals.size(); j++) {
-                if (animals.get(i).equals(animals.get(j))) {
-                    System.out.println("Есть совпадение - " + animals.get(i).getName() + ", позиции " + (i + 1) + " и " + (j + 1));
-                }
-            }
-        }
+        zoo.checkUniquenessOfAnimals();
     }
 }
